@@ -321,7 +321,7 @@ const Impact = () => {
     { value: 50, label: 'Members', suffix: '+' },
     { value: 12, label: 'Projects', suffix: '+' },
     { value: 1000, label: 'Lives Impacted', suffix: '+' },
-    { value: 5, label: 'Years', suffix: '+' },
+    { value: 6, label: 'Years', suffix: '+' },
   ];
 
   const Counter = ({ value, suffix }: { value: number, suffix: string }) => {
@@ -499,7 +499,7 @@ const Board = () => {
       name: 'Rtr. Popoola Samuel', 
       role: 'President', 
       isLead: true, 
-      bio: 'A Poultry Site Engineer and Publisher dedicated to leading the club with excellence and vision.',
+      bio: 'Project Manager and Civic leader dedicated to leading the club with excellence and vision.',
       image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Samuel&backgroundColor=b6e3f4'
     },
     { 
