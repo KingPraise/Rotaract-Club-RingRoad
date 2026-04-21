@@ -145,8 +145,9 @@ const Navbar = () => {
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-sm py-4 h-20 flex items-center border-b border-gray-100' : 'bg-transparent py-6 h-24 flex items-center'}`}>
       <div className="max-w-7xl mx-auto px-10 w-full flex justify-between items-center">
-        <a href="#home" className={`text-2xl font-extrabold tracking-tight ${scrolled ? 'text-rotary-blue' : 'text-white'}`}>
-          Rotaract <span className="text-rotaract-gold">Ring Road</span>
+        <a href="#home" className={`flex flex-col ${scrolled ? 'text-rotary-blue' : 'text-white'}`}>
+          <span className="text-xl font-black tracking-tighter leading-none">Rotaract Club Of</span>
+          <span className="text-2xl font-black tracking-tight leading-none text-rotaract-gold italic">Ibadan Ring Road</span>
         </a>
 
         {/* Desktop Links */}
@@ -219,7 +220,7 @@ const Hero = () => {
             Young Leaders. <br/>Real Service. <br/>Lasting Impact.
           </h1>
           <p className="text-blue-100 text-lg mb-8 leading-relaxed font-light">
-            Rotaract Club of Ring Road Ibadan empowers young professionals to take action in their communities and lead meaningful change.
+            Rotaract Club Of Ibadan Ring Road empowers young professionals to take action in their communities and lead meaningful change.
           </p>
           <div className="flex gap-4">
             <a href="#about" className="bg-white text-rotary-blue px-8 py-3 rounded-lg font-bold flex items-center shadow-lg hover:bg-gray-50 transition-all">
@@ -375,6 +376,63 @@ const Impact = () => {
   );
 };
 
+const YearTheme = () => {
+  return (
+    <section className="py-20 bg-white overflow-hidden relative border-b border-gray-50">
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-rotaract-gold/30 to-transparent"></div>
+      <div className="max-w-7xl mx-auto px-12 text-center">
+        <motion.div
+           initial={{ opacity: 0, y: 30 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8 }}
+           viewport={{ once: true }}
+           className="relative inline-block"
+           style={{ perspective: '1000px' }}
+        >
+          <div className="text-[10px] md:text-sm font-black uppercase tracking-[0.5em] text-rotary-blue/40 mb-6 drop-shadow-sm">
+            Presidential Message 2025–2026
+          </div>
+          
+          <motion.div 
+            className="relative"
+            animate={{ 
+              rotateX: [0, 5, 0, -5, 0],
+              rotateY: [0, 10, 0, -10, 0] 
+            }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          >
+             <h2 
+              className="text-7xl md:text-[140px] font-black leading-none tracking-tighter text-rotary-blue italic select-none"
+              style={{
+                textShadow: `
+                  0 1px 0 #ccc,
+                  0 2px 0 #c9c9c9,
+                  0 3px 0 #bbb,
+                  0 4px 0 #b9b9b9,
+                  0 5px 0 #aaa,
+                  0 6px 1px rgba(0,0,0,.1),
+                  0 0 5px rgba(0,0,0,.1),
+                  0 1px 3px rgba(0,0,0,.3),
+                  0 3px 5px rgba(0,0,0,.2),
+                  0 5px 10px rgba(0,0,0,.25),
+                  0 10px 10px rgba(0,0,0,.2),
+                  0 20px 20px rgba(0,0,0,.15)
+                `
+              }}
+            >
+              Unite for <br className="md:hidden" /> <span className="text-rotaract-gold">Good</span>
+            </h2>
+          </motion.div>
+
+          <div className="mt-12 text-rotary-blue font-bold tracking-[0.2em] text-xs md:text-sm border-t border-rotaract-gold/20 pt-6 inline-block">
+            STRENGTH IN UNITY · IMPACT THROUGH SERVICE
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 const About = () => {
   return (
     <section id="about" className="py-24 bg-white overflow-hidden">
@@ -393,7 +451,7 @@ const About = () => {
             </h3>
             <div className="space-y-6 text-brand-muted leading-relaxed text-sm lg:text-base">
               <p>
-                Rotaract Club of Ring Road Ibadan is a service organization sponsored by the Rotary Club of Ring Road, Ibadan. As part of Rotary International, we are members of a global network of 1.4 million neighbors, friends, and leaders who see a world where people unite and take action to create lasting change.
+                Rotaract Club Of Ibadan Ring Road is a service organization sponsored by the Rotary Club of Ring Road, Ibadan. As part of Rotary International, we are members of a global network of 1.4 million neighbors, friends, and leaders who see a world where people unite and take action to create lasting change.
               </p>
               <p>
                 Our partnership with Rotary International gives us the mentorship, resources, and global reach to tackle the most pressing humanitarian challenges, starting right here in Ibadan. We share the Rotary vision of building a better world through service, fellowship, and integrity.
@@ -707,9 +765,16 @@ const Footer = () => {
     <footer className="bg-white py-16 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-12">
         <div className="flex flex-col md:row justify-between items-center gap-12 mb-16">
-          <div className="text-center md:text-left">
-            <h3 className="text-3xl font-black text-rotary-blue tracking-tighter mb-2">Rotaract Ring Road</h3>
-            <p className="text-xs font-bold text-gray-400 uppercase tracking-[0.4em]">Service Above Self · Ibadan</p>
+          <div className="text-center md:text-left relative">
+            <div className="absolute -left-6 top-0 bottom-0 w-1 bg-rotaract-gold hidden md:block rounded-full opacity-50"></div>
+            <h3 className="text-2xl md:text-3xl font-black text-rotary-blue tracking-tighter leading-tight mb-2">
+              Rotaract Club Of <br />
+              <span className="text-rotaract-gold italic">Ibadan Ring Road</span>
+            </h3>
+            <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.6em] flex items-center justify-center md:justify-start gap-2">
+              <span className="w-8 h-px bg-gray-200 hidden md:block"></span>
+              Service Above Self
+            </p>
           </div>
 
           <div className="flex gap-6">
@@ -729,7 +794,7 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col md:row justify-between items-center gap-6 text-[10px] text-gray-300 font-bold uppercase tracking-[0.2em] border-t border-gray-50 pt-12">
-          <div>© 2026 Rotaract Club of Ring Road Ibadan. District 9126</div>
+          <div>© 2026 Rotaract Club Of Ibadan Ring Road. District 9126</div>
           <div className="flex items-center gap-2 text-rotary-blue">
             <span className="w-1.5 h-1.5 bg-rotaract-gold rounded-full shadow-[0_0_8px_#F7A81B]"></span>
             Affiliated with Rotary International
@@ -760,6 +825,7 @@ export default function App() {
       <main>
         <Hero />
         <Impact />
+        <YearTheme />
         <About />
         <Board />
         <Projects />
