@@ -145,9 +145,25 @@ const Navbar = () => {
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-sm py-4 h-20 flex items-center border-b border-gray-100' : 'bg-transparent py-6 h-24 flex items-center'}`}>
       <div className="max-w-7xl mx-auto px-10 w-full flex justify-between items-center">
-        <a href="#home" className={`flex flex-col ${scrolled ? 'text-rotary-blue' : 'text-white'}`}>
-          <span className="text-xl font-black tracking-tighter leading-none">Rotaract Club Of</span>
-          <span className="text-2xl font-black tracking-tight leading-none text-rotaract-gold italic">Ibadan Ring Road</span>
+        <a href="#home" className="flex items-center gap-4 group">
+          <div className="relative">
+            <div className={`absolute inset-0 bg-rotaract-gold/20 rounded-full blur-md transition-opacity duration-500 ${scrolled ? 'opacity-0' : 'opacity-100'}`}></div>
+            <img 
+              src="/logo.png" 
+              alt="Rotaract Club Of Ibadan Ring Road" 
+              className="h-14 md:h-16 w-auto object-contain relative z-10 transition-transform duration-500 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                const fallback = e.currentTarget.parentElement?.nextElementSibling;
+                if (fallback) fallback.classList.remove('hidden');
+              }}
+            />
+          </div>
+          <div className="hidden flex flex-col pointer-events-none">
+            <span className={`text-xl font-black tracking-tighter leading-none transition-colors duration-300 ${scrolled ? 'text-rotary-blue' : 'text-white'}`}>Rotaract Club Of</span>
+            <span className="text-2xl font-black tracking-tight leading-none text-rotaract-gold italic">Ibadan Ring Road</span>
+          </div>
         </a>
 
         {/* Desktop Links */}
@@ -774,6 +790,10 @@ const Footer = () => {
             <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.6em] flex items-center justify-center md:justify-start gap-2">
               <span className="w-8 h-px bg-gray-200 hidden md:block"></span>
               Service Above Self
+            </p>
+            <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.4em] flex items-center justify-center md:justify-start gap-2 mt-4">
+              <MapPin size={10} className="text-rotaract-gold" />
+              Panthers Hub, Familusi Avenue, Iyaganku, Ibadan.
             </p>
           </div>
 
