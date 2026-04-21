@@ -407,7 +407,7 @@ const About = () => {
                 />
                 <div className="h-10 w-px bg-gray-200"></div>
                 <div className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] leading-tight">
-                  Official Sponsor of <br /> Ring Road Rotaract
+                  Official Sponsor of <br /> Rotaract Club of Ibadan Ring Road
                 </div>
               </div>
             </div>
@@ -425,7 +425,7 @@ const About = () => {
               </div>
               <div>
                 <div className="font-bold text-rotary-blue text-lg">Global Connectivity</div>
-                <p className="text-xs lg:text-sm text-brand-muted mt-2 font-medium">As Rotaractors, we are part of District 9125, connecting with thousands of fellow changemakers across Nigeria and the world.</p>
+                <p className="text-xs lg:text-sm text-brand-muted mt-2 font-medium">As Rotaractors, we are part of District 9126, connecting with thousands of fellow changemakers across Nigeria and the world.</p>
               </div>
             </div>
           </div>
@@ -625,7 +625,7 @@ const Events = () => {
       lead: 'Rtr. Risqat',
       time: '6:30 PM - 9:00 PM',
       location: 'Premier Hotel, Ibadan',
-      description: 'A networking and cultural exchange evening with Rotaractors from District 9125. Expect keynote speakers on leadership and local social impact.'
+      description: 'A networking and cultural exchange evening with Rotaractors from District 9126. Expect keynote speakers on leadership and local social impact.'
     },
     { 
       month: 'JUN', 
@@ -729,7 +729,7 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col md:row justify-between items-center gap-6 text-[10px] text-gray-300 font-bold uppercase tracking-[0.2em] border-t border-gray-50 pt-12">
-          <div>© 2026 Rotaract Club of Ring Road Ibadan. District 9125</div>
+          <div>© 2026 Rotaract Club of Ring Road Ibadan. District 9126</div>
           <div className="flex items-center gap-2 text-rotary-blue">
             <span className="w-1.5 h-1.5 bg-rotaract-gold rounded-full shadow-[0_0_8px_#F7A81B]"></span>
             Affiliated with Rotary International
