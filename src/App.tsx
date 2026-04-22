@@ -138,20 +138,21 @@ const Navbar = () => {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Board', href: '#board' },
+    { name: 'Impact', href: '#impact-report' },
     { name: 'Projects', href: '#projects' },
     { name: 'Events', href: '#events' },
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-sm py-4 h-20 flex items-center border-b border-gray-100' : 'bg-transparent py-6 h-24 flex items-center'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-sm py-4 h-20 flex items-center border-b border-gray-100' : 'bg-transparent py-8 h-32 md:h-40 flex items-center'}`}>
       <div className="max-w-7xl mx-auto px-10 w-full flex justify-between items-center">
         <a href="#home" className="flex items-center gap-4 group">
           <div className="relative">
-            <div className={`absolute inset-0 bg-rotaract-gold/20 rounded-full blur-md transition-opacity duration-500 ${scrolled ? 'opacity-0' : 'opacity-100'}`}></div>
+            <div className={`absolute inset-0 bg-rotaract-gold/20 rounded-full blur-xl transition-opacity duration-500 ${scrolled ? 'opacity-0' : 'opacity-100'}`}></div>
             <img 
-              src="/logo.png" 
+              src="https://lh3.googleusercontent.com/d/1o7MJOsIYWbMCs8Xtio_WmCQCEjCYQ3WO" 
               alt="Rotaract Club Of Ibadan Ring Road" 
-              className="h-14 md:h-16 w-auto object-contain relative z-10 transition-transform duration-500 group-hover:scale-105"
+              className={`w-auto object-contain relative z-10 transition-all duration-500 group-hover:scale-110 ${scrolled ? 'h-14 md:h-16' : 'h-24 md:h-32'}`}
               referrerPolicy="no-referrer"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
@@ -177,8 +178,8 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <a href="#donate" className="bg-rotaract-gold text-white px-6 py-2.5 rounded-full font-bold shadow-md hover:scale-105 transition-all">
-            Donate
+          <a href="#join" className="bg-rotaract-gold text-white px-6 py-2.5 rounded-full font-bold shadow-md hover:scale-105 transition-all">
+            Join Us
           </a>
         </div>
 
@@ -207,8 +208,8 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <a href="#donate" onClick={() => setIsOpen(false)} className="bg-rotaract-gold text-white px-10 py-3 rounded-full font-bold text-lg shadow-lg">
-              Donate
+            <a href="#join" onClick={() => setIsOpen(false)} className="bg-rotaract-gold text-white px-10 py-3 rounded-full font-bold text-lg shadow-lg">
+              Join Us
             </a>
           </motion.div>
         )}
@@ -618,6 +619,144 @@ const Board = () => {
   );
 };
 
+const ImpactReport = () => {
+  const images = [
+    { url: 'https://images.unsplash.com/photo-1544126592-807daa2b565b?auto=format&fit=crop&q=80', caption: 'Beneficiaries with the packages' },
+    { url: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80', caption: 'Training on proper diaper use' },
+    { url: 'https://images.unsplash.com/photo-1531545517246-167e1da24a2a?auto=format&fit=crop&q=80', caption: 'Club members and Volunteers' },
+    { url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80', caption: 'Interview Session with Beneficiary' },
+  ];
+
+  return (
+    <section id="impact-report" className="py-24 bg-brand-bg relative overflow-hidden">
+      {/* Decorative patterns */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-rotaract-gold/5 blur-[120px] rounded-full -mr-48 -mt-48"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-rotary-blue/5 blur-[120px] rounded-full -ml-48 -mb-48"></div>
+
+      <div className="max-w-7xl mx-auto px-12 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-20 items-start">
+          <div className="lg:w-1/2">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-xs font-bold uppercase tracking-[0.4em] text-rotaract-gold mb-4">Recent Outreach Success</h2>
+              <h3 className="text-5xl md:text-6xl font-black text-rotary-blue mb-8 leading-[1.1] tracking-tighter">
+                Diaper a Baby <br />
+                <span className="text-rotaract-gold italic underline decoration-rotary-blue/10 underline-offset-8">Outreach 2024</span>
+              </h3>
+              
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+                <div className="p-8 bg-white/60 backdrop-blur-sm rounded-[40px] border border-white shadow-sm hover:shadow-md transition-all">
+                  <div className="text-4xl font-black text-rotary-blue">60</div>
+                  <div className="text-[10px] uppercase font-bold text-gray-400 tracking-widest mt-2 px-1">Beneficiaries</div>
+                </div>
+                <div className="p-8 bg-white/60 backdrop-blur-sm rounded-[40px] border border-white shadow-sm hover:shadow-md transition-all">
+                  <div className="text-4xl font-black text-rotary-blue">15</div>
+                  <div className="text-[10px] uppercase font-bold text-gray-400 tracking-widest mt-2 px-1">Volunteers</div>
+                </div>
+                <div className="p-8 bg-rotary-blue rounded-[40px] shadow-lg md:col-span-1 col-span-2 flex flex-col justify-center">
+                  <div className="text-xs font-black text-rotaract-gold uppercase tracking-[0.2em] mb-1 italic">Venue</div>
+                  <div className="text-[10px] text-white/90 leading-tight font-medium">Teslim Folarin Compound, Oja Igbo, Ibadan</div>
+                </div>
+              </div>
+
+              <div className="space-y-8 text-brand-muted leading-relaxed">
+                <div className="relative pl-8 border-l-2 border-rotaract-gold/30">
+                  <p className="text-lg font-medium text-brand-dark/80 italic">
+                    "This project was aimed at supporting nursing mothers by promoting hygiene and providing essential baby care items."
+                  </p>
+                  <p className="mt-4 text-sm">
+                    Under the Maternal and Child Health focus area, we provided essential materials including diapers, soaps, and toiletries to 60 mothers in the Kosodo community.
+                  </p>
+                </div>
+                
+                <div className="bg-white/80 backdrop-blur-md p-10 rounded-[50px] border border-white shadow-sm">
+                  <h4 className="text-sm font-black text-rotary-blue mb-6 uppercase tracking-[0.4em] flex items-center gap-3">
+                    <Heart size={14} className="text-rotaract-gold fill-rotaract-gold" />
+                    Key Activities
+                  </h4>
+                  <ul className="grid md:grid-cols-2 gap-4">
+                    {[
+                      'Hygiene Management Talk', 
+                      'Diaper Distribution', 
+                      'Toiletry Essential Kits', 
+                      'Effective Childcare Session'
+                    ].map((h, i) => (
+                      <li key={i} className="flex items-center gap-4 text-xs font-bold text-brand-dark px-4 py-3 bg-gray-50/50 rounded-2xl">
+                        <CheckCircle2 size={14} className="text-rotaract-gold shrink-0" />
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="lg:w-1/2 w-full">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <h4 className="text-[10px] font-black text-rotary-blue/50 mb-4 uppercase tracking-[0.6em] text-center lg:text-left">Project Snapshot Gallery</h4>
+              <div className="grid grid-cols-2 gap-4 md:gap-6">
+                {images.map((img, i) => (
+                  <motion.div 
+                    key={i} 
+                    whileHover={{ y: -5, scale: 1.02 }}
+                    className="group relative h-56 md:h-64 rounded-[40px] overflow-hidden cursor-pointer shadow-xl hover:shadow-2xl transition-all"
+                  >
+                    <img 
+                      src={img.url} 
+                      alt={img.caption}
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-rotary-blue/90 via-rotary-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8">
+                      <div className="h-1 w-12 bg-rotaract-gold mb-3 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                      <p className="text-white text-[10px] font-black uppercase tracking-[0.2em] leading-tight transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{img.caption}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+              
+              <div className="mt-12 p-12 bg-white rounded-[60px] border border-gray-100 shadow-xl relative group">
+                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-bg rounded-full -mr-16 -mt-16 group-hover:bg-rotaract-gold/10 transition-colors"></div>
+                 <div className="flex items-center gap-6 mb-8">
+                    <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center">
+                       <Award size={28} className="text-rotary-blue" />
+                    </div>
+                    <div>
+                       <h4 className="text-2xl font-black text-rotary-blue tracking-tight italic">Legacy of Impact</h4>
+                       <p className="text-[10px] font-bold text-rotaract-gold uppercase tracking-widest">Post-Project Reflection</p>
+                    </div>
+                 </div>
+                 <p className="text-sm md:text-base text-brand-muted leading-relaxed font-medium">
+                   "Beyond material support, this engagement fostered a strong relationship between the club and the community, equipping Kosodo mothers with knowledge for healthier generations."
+                 </p>
+                 <div className="mt-10 flex items-center justify-between">
+                    <div className="flex flex-col">
+                       <span className="text-[10px] font-black text-gray-300 uppercase tracking-widest">Approved By</span>
+                       <span className="text-sm font-bold text-rotary-blue">Rtr. Popoola Samuel</span>
+                    </div>
+                    <div className="h-12 w-12 rounded-2xl bg-rotaract-gold flex items-center justify-center shadow-lg transform rotate-6">
+                       <p className="text-white font-black text-lg">9126</p>
+                    </div>
+                 </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 const Projects = () => {
   const projects = [
     { 
@@ -751,23 +890,23 @@ const Events = () => {
   );
 };
 
-const Donate = () => {
+const JoinUs = () => {
   return (
-    <section id="donate" className="py-16 bg-white">
+    <section id="join" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-12">
         <div className="bg-brand-dark rounded-[48px] p-16 text-white text-center shadow-2xl relative overflow-hidden flex flex-col md:row items-center justify-between gap-12">
           <div className="absolute top-0 right-0 w-64 h-64 bg-rotaract-gold/30 -mr-32 -mt-32 rounded-full blur-[80px]"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-rotary-blue/30 -ml-32 -mb-32 rounded-full blur-[80px]"></div>
           
           <div className="text-left md:w-3/5 relative z-10">
-            <h2 className="text-[10px] font-bold uppercase tracking-[0.4em] text-rotaract-gold mb-4">Invest in our Future</h2>
-            <h3 className="text-4xl md:text-5xl font-black mb-6 tracking-tighter leading-tight">Every Seed We Plant <br /><span className="text-rotaract-gold italic">Changes a Life in Ibadan.</span></h3>
-            <p className="text-base text-gray-400 leading-relaxed font-light">Join our mission to provide clean water, quality education, and medical access. 100% of your donations go directly to project execution.</p>
+            <h2 className="text-[10px] font-bold uppercase tracking-[0.4em] text-rotaract-gold mb-4">Be the Change</h2>
+            <h3 className="text-4xl md:text-5xl font-black mb-6 tracking-tighter leading-tight">Every Hand Joined <br /><span className="text-rotaract-gold italic">Strengthens our Ibadan.</span></h3>
+            <p className="text-base text-gray-400 leading-relaxed font-light">Join our fellowship of young leaders dedicated to service, integrity, and sustainable impact. Your presence makes our collective voice louder.</p>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-6 w-full md:w-auto relative z-10">
             <button className="bg-rotaract-gold text-white px-12 py-5 rounded-full font-black text-lg shadow-xl hover:bg-[#e09818] transition-all transform hover:-translate-y-1">
-              Donate Now
+              Join Us Now
             </button>
           </div>
         </div>
@@ -848,9 +987,10 @@ export default function App() {
         <YearTheme />
         <About />
         <Board />
+        <ImpactReport />
         <Projects />
         <Events />
-        <Donate />
+        <JoinUs />
       </main>
 
       <Footer />
