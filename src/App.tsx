@@ -140,6 +140,7 @@ const Navbar = () => {
     { name: 'Board', href: '#board' },
     { name: 'Impact', href: '#impact-report' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Gallery', href: '#gallery' },
     { name: 'Events', href: '#events' },
   ];
 
@@ -220,10 +221,23 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-[700px] md:h-[80vh] bg-rotary-blue flex items-center overflow-hidden">
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+    <section id="home" className="relative min-h-[700px] md:h-[90vh] bg-rotary-blue flex items-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://lh3.googleusercontent.com/d/1z1oMmY4poNs_YQk4QOWQfGcQxTDSY5c5" 
+          alt="Rotaract Club Hero" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-rotary-blue/80 backdrop-blur-[2px] transition-all duration-700"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-rotary-blue via-rotary-blue/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-20"></div>
+      </div>
+
+      <div className="absolute inset-0 opacity-10 z-1" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
       
-      <div className="max-w-7xl mx-auto px-12 grid md:grid-cols-2 gap-10 items-center z-10 py-20">
+      <div className="max-w-7xl mx-auto px-12 grid md:grid-cols-2 gap-10 items-center z-10 py-20 w-full">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -621,10 +635,12 @@ const Board = () => {
 
 const ImpactReport = () => {
   const images = [
-    { url: 'https://images.unsplash.com/photo-1544126592-807daa2b565b?auto=format&fit=crop&q=80', caption: 'Beneficiaries with the packages' },
-    { url: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80', caption: 'Training on proper diaper use' },
-    { url: 'https://images.unsplash.com/photo-1531545517246-167e1da24a2a?auto=format&fit=crop&q=80', caption: 'Club members and Volunteers' },
-    { url: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80', caption: 'Interview Session with Beneficiary' },
+    { url: 'https://lh3.googleusercontent.com/d/1wZTZjLEB9ciOWnbTQfq5gyY4RPlrI-T6', caption: 'Beneficiaries with the packages' },
+    { url: 'https://lh3.googleusercontent.com/d/1txgEebOsTPfXneK9MCkS8M2dZfSKLoYm', caption: 'Training on proper diaper use' },
+    { url: 'https://lh3.googleusercontent.com/d/1gcgc_h57shOraqsRY0ov6k2nDE-Uk4ZL', caption: 'Welcome address by Project Director' },
+    { url: 'https://lh3.googleusercontent.com/d/1-CagTBjgAwS1OgqET_vnOJRobtGzijpZ', caption: 'Club members and Volunteers' },
+    { url: 'https://lh3.googleusercontent.com/d/1gR37pPQUCql7v9wHlq1CTH4flNjbmOT5', caption: 'Interview Session with Beneficiary' },
+    { url: 'https://lh3.googleusercontent.com/d/1MU-MwzJF8lQ3lxoInnl8YAnYeOiPm0fz', caption: 'Photo Splash: Mission Accomplished' },
   ];
 
   return (
@@ -787,9 +803,9 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-12">
-        <h2 className="text-xs font-bold uppercase tracking-widest text-rotaract-gold mb-10">Impact in Action</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <h2 className="text-xs font-bold uppercase tracking-widest text-rotaract-gold mb-10 text-center md:text-left">Impact in Action</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12">
           {projects.map((p, i) => (
             <motion.div 
               key={i}
@@ -797,7 +813,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className={`bg-brand-bg p-10 rounded-[40px] border-l-8 ${p.color} shadow-sm group hover:shadow-md transition-all flex items-start gap-8`}
+              className={`bg-brand-bg p-8 md:p-10 rounded-[40px] border-l-8 ${p.color} shadow-sm group hover:shadow-md transition-all flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 text-center md:text-left`}
             >
               <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                 <p.icon className="text-rotary-blue" size={32} />
@@ -809,6 +825,69 @@ const Projects = () => {
                 <p className="text-sm lg:text-base text-brand-muted leading-relaxed font-medium">
                   {p.detailed}
                 </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ClubGallery = () => {
+  const galleryImages = [
+    'https://lh3.googleusercontent.com/d/1Lc4V7lBBCTbOWnGDqsAMeWUXESpYsEag',
+    'https://lh3.googleusercontent.com/d/1-Lx4wnWXwre3Lz1yKq5AvTuk1NUrSo5k',
+    'https://lh3.googleusercontent.com/d/1G133nAnn-RZZ2qmh9d6TLBzUjlkgkMAI',
+    'https://lh3.googleusercontent.com/d/1NhnELEIHI6VEIV6lXq_rUSMFbeaUkFJi',
+    'https://lh3.googleusercontent.com/d/15K78Gb-AYCSPdt6Z5bm6LGYmweUC97lO',
+    'https://lh3.googleusercontent.com/d/1PVtHGRuYzb2rBp0PaeFU9q4BM6OhBdVD',
+    'https://lh3.googleusercontent.com/d/1Jui0otzszP7J36JAMAJHf-0lNJoSiRRD',
+    'https://lh3.googleusercontent.com/d/1QWckRxWy5EnGMl7lyALi2WpoUpJOWBCA',
+    'https://lh3.googleusercontent.com/d/1j0pKo1l5EAEnvJAOB0o4Eyc9tbIjCeJ2',
+    'https://lh3.googleusercontent.com/d/1rKHUgLcFF372vmn6m8E04i5a5mA6ApIj',
+    'https://lh3.googleusercontent.com/d/1d217F9LLaKYxvkxNxsSlnDUas0PyLzk1',
+  ];
+
+  return (
+    <section id="gallery" className="py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-12">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div className="max-w-2xl">
+            <h2 className="text-xs font-bold uppercase tracking-[0.4em] text-rotaract-gold mb-4">Our Fellowship</h2>
+            <h3 className="text-4xl md:text-5xl font-black text-rotary-blue leading-tight tracking-tighter">
+              Moments of Service <br />
+              <span className="text-rotaract-gold italic">Captured in Time</span>
+            </h3>
+          </div>
+          <div className="hidden md:block">
+            <div className="flex items-center gap-4 text-[10px] font-black text-gray-400 uppercase tracking-widest">
+              <span className="w-12 h-px bg-gray-200"></span>
+              {galleryImages.length} Moments Shared
+            </div>
+          </div>
+        </div>
+
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+          {galleryImages.map((src, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.05, duration: 0.5 }}
+              viewport={{ once: true }}
+              className="relative group rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 bg-gray-50"
+            >
+              <img 
+                src={src} 
+                alt={`Gallery image ${index + 1}`}
+                className="w-full h-auto object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                referrerPolicy="no-referrer"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-rotary-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                <div className="w-1 h-1 bg-white rounded-full"></div>
               </div>
             </motion.div>
           ))}
@@ -853,14 +932,14 @@ const Events = () => {
 
   return (
     <section id="events" className="py-24 bg-brand-bg">
-      <div className="max-w-7xl mx-auto px-12">
-        <div className="flex items-center gap-10">
-          <div className="w-1/3">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-20">
+          <div className="w-full lg:w-1/3 text-center lg:text-left">
             <h2 className="text-xs font-bold uppercase tracking-widest text-rotaract-gold mb-4">The Calendar</h2>
             <h3 className="text-4xl font-extrabold text-rotary-blue mb-6 tracking-tight italic">Join the Fellowship</h3>
-            <p className="text-sm text-brand-muted leading-relaxed font-medium">We meet regularly and serve passionately. Click an event to learn more about how you can participate.</p>
+            <p className="text-sm text-brand-muted leading-relaxed font-medium max-w-sm mx-auto lg:mx-0">We meet regularly and serve passionately. Click an event to learn more about how you can participate.</p>
           </div>
-          <div className="w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4">
             {events.map((e, i) => (
               <motion.div 
                 key={i}
@@ -989,6 +1068,7 @@ export default function App() {
         <Board />
         <ImpactReport />
         <Projects />
+        <ClubGallery />
         <Events />
         <JoinUs />
       </main>
