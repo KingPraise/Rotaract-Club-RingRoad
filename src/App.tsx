@@ -25,7 +25,9 @@ import {
   Stethoscope,
   Info,
   Clock,
-  User
+  User,
+  Activity,
+  GraduationCap
 } from 'lucide-react';
 
 // --- Types ---
@@ -531,21 +533,21 @@ const Board = () => {
       role: 'President', 
       isLead: true, 
       bio: 'Project Manager and Civic leader dedicated to leading the club with excellence and vision.',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Samuel&backgroundColor=b6e3f4'
+      image: 'https://lh3.googleusercontent.com/d/1KaCnXu6se4o7ojq5Jj-WTYUhQpUm6mML'
     },
     { 
       name: 'Rtr. Taiwo King Praise', 
       role: 'Vice President & Secretary', 
       isLead: false, 
       bio: 'Software Engineer and founder of Code Dynasty ICT solutions. A Mathematics graduate and strategic administrator.',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Praise&backgroundColor=c0aede'
+      image: 'https://lh3.googleusercontent.com/d/1bNFqh6QwRGF8fP7quxX-j11FglcuapJw'
     },
     { 
       name: 'Rtr. Adejemo Risqat', 
       role: 'Immediate Past President & Project Director', 
       isLead: false, 
       bio: 'Transitioning leader, tech professional at Red Cloud Technology, and dedicated commercial vegetable farmer.',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Risqat&backgroundColor=ffdfbf'
+      image: 'https://lh3.googleusercontent.com/d/1BOmp9Z_m8hXU6R9bKP4oZiiSgAQBY-K0'
     },
     { 
       name: 'Rtr. Akinsoroju Tunmininu', 
@@ -559,14 +561,14 @@ const Board = () => {
       role: 'Club Trainer', 
       isLead: false, 
       bio: 'Professional graphics designer and branding expert dedicated to membership development and training.',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Tejumola&backgroundColor=ffd5dc'
+      image: 'https://lh3.googleusercontent.com/d/14Hj_7paRO9z7xisi_sRWeoqTH21bt0cl'
     },
     { 
       name: 'Rtr. Ayanfe Adesanya', 
       role: 'Public Relations Media Officer', 
       isLead: false, 
       bio: 'Chairman of LD Groups and brand voice expert, leading our external communications and public image.',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ayanfe&backgroundColor=b6e3f4'
+      image: 'https://lh3.googleusercontent.com/d/1Q-mk0TbqCaJX0t0V_6rAA8XDVMg3fS6x'
     },
     { 
       name: 'Rtr. Pelayanju Omotayo', 
@@ -580,14 +582,14 @@ const Board = () => {
       role: 'Club Welfare Officer', 
       isLead: false, 
       bio: 'Final-year student dedicated to the holistic well-being and social support of all club members.',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Justinah&backgroundColor=ffdfbf'
+      image: 'https://lh3.googleusercontent.com/d/12M1PmqcMGEtvlwNdXYyXBiCUmlCQPUdN'
     },
     { 
       name: 'Rtr. Oluwatoke Anita', 
       role: 'Club Admin', 
       isLead: false, 
       bio: 'Student entrepreneur and perfume specialist managing our administrative core and member coordination.',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Anita&backgroundColor=ffd5dc'
+      image: 'https://lh3.googleusercontent.com/d/1pJJjNLmXWtcN00M9KVZWSpoUM1fb1VSz'
     },
   ];
 
@@ -780,6 +782,18 @@ const Projects = () => {
       icon: Stethoscope, 
       color: 'border-rotaract-gold',
       detailed: 'We provide annual health screenings, drug donations, and sanitation awareness in Ibadan settlements like Odo-Ona and Oluyole.' 
+    },
+    { 
+      title: 'Polio Eradication', 
+      icon: Activity, 
+      color: 'border-rotary-blue',
+      detailed: 'Sensitizing 200+ traders at Aleshinloye Market on immunization and empowering women with economic support tools during World Polio Day 2025.' 
+    },
+    { 
+      title: 'Pad a Girl Child', 
+      icon: GraduationCap, 
+      color: 'border-rotaract-gold',
+      detailed: 'Menstrual hygiene management and career motivation outreach for over 150 female students to promote health and school attendance.' 
     },
     { 
       title: 'Education Outreach', 
