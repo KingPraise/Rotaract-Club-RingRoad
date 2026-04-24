@@ -7,27 +7,28 @@ import {
   Calendar, 
   ExternalLink, 
   Menu, 
-  X, 
-  ChevronRight, 
-  MapPin, 
-  Mail, 
-  Phone, 
-  Instagram, 
-  Linkedin, 
-  Twitter, 
-  MessageSquare,
+  X,
+  ChevronLeft,
+  ChevronRight,
   Award,
-  Zap,
-  Globe,
-  Briefcase,
   BookOpen,
-  Leaf,
-  Stethoscope,
-  Info,
+  Briefcase,
   Clock,
-  User,
+  Globe,
+  Instagram,
+  Leaf,
+  Linkedin,
+  Mail,
+  MapPin,
+  MessageSquare,
+  Phone,
+  Stethoscope,
   Activity,
-  GraduationCap
+  GraduationCap,
+  Info,
+  Twitter,
+  User,
+  Zap
 } from 'lucide-react';
 
 // --- Types ---
@@ -181,7 +182,7 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <a href="#join" className="bg-rotaract-gold text-white px-6 py-2.5 rounded-full font-bold shadow-md hover:scale-105 transition-all">
+          <a href="https://wa.me/2347033604513" target="_blank" rel="noopener noreferrer" className="bg-rotaract-gold text-white px-6 py-2.5 rounded-full font-bold shadow-md hover:scale-105 transition-all">
             Join Us
           </a>
         </div>
@@ -211,7 +212,7 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <a href="#join" onClick={() => setIsOpen(false)} className="bg-rotaract-gold text-white px-10 py-3 rounded-full font-bold text-lg shadow-lg">
+            <a href="https://wa.me/2347033604513" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="bg-rotaract-gold text-white px-10 py-3 rounded-full font-bold text-lg shadow-lg">
               Join Us
             </a>
           </motion.div>
@@ -229,7 +230,7 @@ const Hero = () => {
         <img 
           src="https://lh3.googleusercontent.com/d/1z1oMmY4poNs_YQk4QOWQfGcQxTDSY5c5" 
           alt="Rotaract Club Hero" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-[50%_15%]"
           referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-rotary-blue/80 backdrop-blur-[2px] transition-all duration-700"></div>
@@ -616,7 +617,7 @@ const Board = () => {
                 <img 
                   src={m.image} 
                   alt={m.name} 
-                  className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg relative z-10"
+                  className="w-32 h-32 rounded-full object-cover object-[50%_15%] border-4 border-white shadow-lg relative z-10"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -733,7 +734,7 @@ const ImpactReport = () => {
                     <img 
                       src={img.url} 
                       alt={img.caption}
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                      className="w-full h-full object-cover object-[50%_15%] transition-transform duration-1000 group-hover:scale-110"
                       referrerPolicy="no-referrer"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-rotary-blue/90 via-rotary-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8">
@@ -776,6 +777,9 @@ const ImpactReport = () => {
   );
 };
 const Projects = () => {
+  const [activeGallery, setActiveGallery] = useState<string[] | null>(null);
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+
   const projects = [
     { 
       title: 'Health & Wellness', 
@@ -787,19 +791,52 @@ const Projects = () => {
       title: 'Polio Eradication', 
       icon: Activity, 
       color: 'border-rotary-blue',
-      detailed: 'Sensitizing 200+ traders at Aleshinloye Market on immunization and empowering women with economic support tools during World Polio Day 2025.' 
+      detailed: 'Sensitizing 200+ traders at Aleshinloye Market on immunization and empowering women with economic support tools during World Polio Day 2025.',
+      gallery: [
+        'https://lh3.googleusercontent.com/d/14RKp30I8hJaOuYfI8uGKl_CRmHlWWf0I',
+        'https://lh3.googleusercontent.com/d/19C06QHm2-8955cgEGQUvll-Viv5p_VCM',
+        'https://lh3.googleusercontent.com/d/1GpuDoTL9LPk-_ROgMOh6HOlCuEwWxjnl',
+        'https://lh3.googleusercontent.com/d/1HvmW2qTI1q-KEWXHn8dEfiJpTDM5dx-P',
+        'https://lh3.googleusercontent.com/d/1KQjFDZTPWijCinsJw-uqa8fPuU3BxbMd',
+        'https://lh3.googleusercontent.com/d/1Wpm1JMl5ObnIdHiTyTob9tQRWfvDpeq7',
+        'https://lh3.googleusercontent.com/d/1Y9oa3kXB9ZzsNWGo_m-pKLIIoWdjdxSX',
+        'https://lh3.googleusercontent.com/d/1ahwVsaqo-Q9hy2F10PVlGNHtwF8zvE24',
+        'https://lh3.googleusercontent.com/d/1ii0O_Y4AC5Ue9mVgUcE6fADzec1uXhJb',
+        'https://lh3.googleusercontent.com/d/1vMHFhs6zYiEPxspCNRVdpQKjo5iZM6vJ'
+      ]
     },
     { 
       title: 'Pad a Girl Child', 
       icon: GraduationCap, 
       color: 'border-rotaract-gold',
-      detailed: 'Menstrual hygiene management and career motivation outreach for over 150 female students to promote health and school attendance.' 
+      detailed: 'Promoting menstrual hygiene awareness and health education for secondary school girls to encourage attendance and self-confidence.',
+      gallery: [
+        'https://lh3.googleusercontent.com/d/1QT3PE1PnAatMEmLLdHOUQ1AI9nwPiva0',
+        'https://lh3.googleusercontent.com/d/1B9H_sRaSycxJu3qHdKZVor9r9IoSphlc',
+        'https://lh3.googleusercontent.com/d/11ZEpBCPYxpGAkojkfeix3VTo2Ma49XjC',
+        'https://lh3.googleusercontent.com/d/1W8r0uQ0kBqMZcJmSTsCEUz2K0Q5ZbzYI',
+        'https://lh3.googleusercontent.com/d/12nOGCrpkoKScTZJX8tj7z9k1byCrzsz7',
+        'https://lh3.googleusercontent.com/d/11_wosoeTaNNa5chanrvCXtz7kQirAYtH',
+        'https://lh3.googleusercontent.com/d/1roizUOw36lfVIWHsZXhaQ13RBiUKw2YN'
+      ]
     },
     { 
       title: 'Education Outreach', 
       icon: BookOpen, 
       color: 'border-rotary-blue',
-      detailed: 'Our "Project Read" initiative provides stationary, textbooks, and reading glasses to over 500 primary school students annually.' 
+      detailed: 'Menstrual health and career education for secondary school girls through our "Pad a Girl Child" initiative, impacting over 150 students.',
+      gallery: [
+        'https://lh3.googleusercontent.com/d/12NbYW8NLtNp_Is56140YEBllkd3ItqSV',
+        'https://lh3.googleusercontent.com/d/1VggVqeYVXTDxhivhbAsChx6qSul36EdL',
+        'https://lh3.googleusercontent.com/d/1o2B1CN8PTjw2fi_3t8YlrA0qMEDuajHP',
+        'https://lh3.googleusercontent.com/d/1NlTcOHNXSIilERCjrvNOlRFoQ1m3fO3f',
+        'https://lh3.googleusercontent.com/d/17DxFVmCIhd_7ukLHGXFIKRs5mKNZ1K8t',
+        'https://lh3.googleusercontent.com/d/14mqJ8Jk5UhL5RcA6NBSaF4nKXblC8NQl',
+        'https://lh3.googleusercontent.com/d/1TaAf5fAgat2-fjklamthtU17BvxiVJyo',
+        'https://lh3.googleusercontent.com/d/1TCyqU8upzIuEmCuylh83HGCgmW-VMI_k',
+        'https://lh3.googleusercontent.com/d/1rTz4MXmqrSiWM96rHcXG0WSez0WO6BoN',
+        'https://lh3.googleusercontent.com/d/10WYSPGIAQbBM6y2fUjBSlDLLOQC_DABi'
+      ]
     },
     { 
       title: 'Environmental Action', 
@@ -815,6 +852,21 @@ const Projects = () => {
     },
   ];
 
+  const openGallery = (imgs: string[]) => {
+    setActiveGallery(imgs);
+    setCurrentImgIndex(0);
+  };
+
+  const nextImg = () => {
+    if (!activeGallery) return;
+    setCurrentImgIndex((prev) => (prev + 1) % activeGallery.length);
+  };
+
+  const prevImg = () => {
+    if (!activeGallery) return;
+    setCurrentImgIndex((prev) => (prev - 1 + activeGallery.length) % activeGallery.length);
+  };
+
   return (
     <section id="projects" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -827,23 +879,86 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className={`bg-brand-bg p-8 md:p-10 rounded-[40px] border-l-8 ${p.color} shadow-sm group hover:shadow-md transition-all flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 text-center md:text-left`}
+              onClick={() => p.gallery && openGallery(p.gallery)}
+              className={`bg-brand-bg p-8 md:p-10 rounded-[40px] border-l-8 ${p.color} shadow-sm group hover:shadow-md transition-all flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 text-center md:text-left ${p.gallery ? 'cursor-pointer' : ''}`}
             >
               <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                 <p.icon className="text-rotary-blue" size={32} />
               </div>
-              <div>
-                <div className="font-black text-rotary-blue text-2xl group-hover:text-rotaract-gold transition-colors mb-2 italic">
-                  {p.title}
+              <div className="flex-1">
+                <div className="flex items-center gap-3 justify-center md:justify-start mb-2">
+                  <h3 className="text-2xl font-black text-rotary-blue tracking-tight italic">{p.title}</h3>
+                  {p.gallery && <div className="text-[10px] font-black bg-rotaract-gold text-white px-3 py-1 rounded-full uppercase tracking-widest not-italic">Gallery</div>}
                 </div>
                 <p className="text-sm lg:text-base text-brand-muted leading-relaxed font-medium">
                   {p.detailed}
                 </p>
+                {p.gallery && <p className="mt-4 text-[10px] font-black text-rotaract-gold uppercase tracking-widest group-hover:underline">Click to view project photos →</p>}
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {activeGallery && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-rotary-blue/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-12"
+          >
+            <button 
+              onClick={() => setActiveGallery(null)}
+              className="absolute top-8 right-8 text-white hover:text-rotaract-gold transition-colors p-2"
+            >
+              <X size={40} />
+            </button>
+            
+            <div className="relative w-full max-w-5xl aspect-[4/3] md:aspect-video flex items-center justify-center">
+              <button 
+                onClick={(e) => { e.stopPropagation(); prevImg(); }}
+                className="absolute left-0 md:-left-20 z-10 text-white hover:text-rotaract-gold transition-all transform hover:scale-110 p-4"
+              >
+                <ChevronLeft size={48} />
+              </button>
+              
+              <motion.div 
+                key={currentImgIndex}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="w-full h-full relative rounded-[40px] overflow-hidden shadow-2xl border-4 border-white/10"
+              >
+                <img 
+                  src={activeGallery[currentImgIndex]} 
+                  alt="Project gallery" 
+                  className="w-full h-full object-cover object-[50%_15%]"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+                  {activeGallery.map((_, idx) => (
+                    <div 
+                      key={idx} 
+                      className={`h-1.5 transition-all duration-300 rounded-full ${idx === currentImgIndex ? 'w-8 bg-rotaract-gold' : 'w-2 bg-white/30'}`}
+                    ></div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <button 
+                onClick={(e) => { e.stopPropagation(); nextImg(); }}
+                className="absolute right-0 md:-right-20 z-10 text-white hover:text-rotaract-gold transition-all transform hover:scale-110 p-4"
+              >
+                <ChevronRight size={48} />
+              </button>
+
+              <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 text-white/50 text-xs font-black uppercase tracking-[0.4em]">
+                {currentImgIndex + 1} / {activeGallery.length}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
@@ -998,9 +1113,14 @@ const JoinUs = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-6 w-full md:w-auto relative z-10">
-            <button className="bg-rotaract-gold text-white px-12 py-5 rounded-full font-black text-lg shadow-xl hover:bg-[#e09818] transition-all transform hover:-translate-y-1">
+            <a 
+              href="https://wa.me/2347033604513" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-rotaract-gold text-white px-12 py-5 rounded-full font-black text-lg shadow-xl hover:bg-[#e09818] transition-all transform hover:-translate-y-1 block"
+            >
               Join Us Now
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -1039,7 +1159,7 @@ const Footer = () => {
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-brand-bg flex items-center justify-center text-brand-dark hover:bg-rotaract-gold hover:text-white transition-all transform hover:-translate-y-1 shadow-sm">
               <Twitter size={20} />
             </a>
-            <a href="https://wa.me/2348100000000" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-brand-bg flex items-center justify-center text-brand-dark hover:bg-rotaract-gold hover:text-white transition-all transform hover:-translate-y-1 shadow-sm">
+            <a href="https://wa.me/2347033604513" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-brand-bg flex items-center justify-center text-brand-dark hover:bg-rotaract-gold hover:text-white transition-all transform hover:-translate-y-1 shadow-sm">
               <MessageSquare size={20} />
             </a>
           </div>
@@ -1049,7 +1169,7 @@ const Footer = () => {
           <div>© 2026 Rotaract Club Of Ibadan Ring Road. District 9126</div>
           <div className="flex items-center gap-2 text-rotary-blue">
             <span className="w-1.5 h-1.5 bg-rotaract-gold rounded-full shadow-[0_0_8px_#F7A81B]"></span>
-            Affiliated with Rotary International
+            Partner with Rotary International
           </div>
         </div>
       </div>
