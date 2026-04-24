@@ -782,10 +782,27 @@ const Projects = () => {
 
   const projects = [
     { 
-      title: 'Health & Wellness', 
-      icon: Stethoscope, 
+      title: 'Ibadan Hunger Walk', 
+      icon: Globe, 
       color: 'border-rotaract-gold',
-      detailed: 'We provide annual health screenings, drug donations, and sanitation awareness in Ibadan settlements like Odo-Ona and Oluyole.' 
+      detailed: 'Raising awareness on food insecurity and distributing "Box of Love" relief items to vulnerable families in Molete, Bode, Popoyemoja, and Idi Arere communities.',
+      gallery: [
+        'https://lh3.googleusercontent.com/d/11YY6Jm2IBcZqdOQDAKlbJHoRTBQlvxZr',
+        'https://lh3.googleusercontent.com/d/1TPe-uaKmtNRn0pCDI_GpR-W3jfxgP6pY',
+        'https://lh3.googleusercontent.com/d/1AG7pAwb-UgK-N73ID75jooqSaxWYD8MZ',
+        'https://lh3.googleusercontent.com/d/1H5wtWEzJCrYAHXirnV9JrUHbB1cmJyit',
+        'https://lh3.googleusercontent.com/d/1QRgu6Zrvl_ArgJMYrVNPgAQSWyjcb1oy',
+        'https://lh3.googleusercontent.com/d/1dEyeeOyuOoOjb-iIZCeu5rxAYmIow09o',
+        'https://lh3.googleusercontent.com/d/1syJRCWXYplL6j-0pehS0BSNo4Almq4Dl',
+        'https://lh3.googleusercontent.com/d/1avFGCeZQaWCeEyG2pqJ0ypGNiKnSC802',
+        'https://lh3.googleusercontent.com/d/19LFAxBrln5KUu6NQbR5Enrf2Gn9Odubn',
+        'https://lh3.googleusercontent.com/d/1Mmm5bXwj94WmIv_VM8b-l9qy9ambepJ3',
+        'https://lh3.googleusercontent.com/d/1mQprBtn3ABrhMrNog69PqxrvubHFkGln',
+        'https://lh3.googleusercontent.com/d/1vT6Hmz4_D6YCrgOgzbnHuOAxdz-9hueH',
+        'https://lh3.googleusercontent.com/d/1bM3sjVWp7SMwyH0Nt5DBz1gm7ExVajnp',
+        'https://lh3.googleusercontent.com/d/1fp7GlG7zbUaaLBtMqmckSrOJw0qmVBY_',
+        'https://lh3.googleusercontent.com/d/1XN2Jp39AE5EeT4TSw44uOLvkYh8wVDGU'
+      ]
     },
     { 
       title: 'Polio Eradication', 
@@ -848,7 +865,16 @@ const Projects = () => {
       title: 'Vocational Support', 
       icon: Zap, 
       color: 'border-rotary-blue',
-      detailed: 'We organize quarterly skills-acquisition workshops for local artisans, teaching financial literacy and digital marketing.' 
+      detailed: 'We organize quarterly skills-acquisition workshops for local artisans, teaching financial literacy and digital marketing.',
+      gallery: [
+        'https://lh3.googleusercontent.com/d/1iSw2Xih87ejFc7OB39Wke9NT1ryCh1ZD',
+        'https://lh3.googleusercontent.com/d/1Jui0otzszP7J36JAMAJHf-0lNJoSiRRD',
+        'https://lh3.googleusercontent.com/d/1rKHUgLcFF372vmn6m8E04i5a5mA6ApIj',
+        'https://lh3.googleusercontent.com/d/1d217F9LLaKYxvkxNxsSlnDUas0PyLzk1',
+        'https://lh3.googleusercontent.com/d/1PVtHGRuYzb2rBp0PaeFU9q4BM6OhBdVD',
+        'https://lh3.googleusercontent.com/d/1QWckRxWy5EnGMl7lyALi2WpoUpJOWBCA',
+        'https://lh3.googleusercontent.com/d/1j0pKo1l5EAEnvJAOB0o4Eyc9tbIjCeJ2'
+      ]
     },
   ];
 
