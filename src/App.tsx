@@ -856,10 +856,17 @@ const Projects = () => {
       ]
     },
     { 
-      title: 'Environmental Action', 
-      icon: Leaf, 
+      title: 'Peace Advocacy', 
+      icon: Heart, 
       color: 'border-rotaract-gold',
-      detailed: 'Monthly city-wide cleaning campaigns and our "Green Ibadan" tree-planting project to combat local climate issues.' 
+      detailed: 'Community advocacy walk from Dugbe to Mokola promoting peace, unity, and conflict prevention through constructive dialogue and awareness.',
+      gallery: [
+        'https://lh3.googleusercontent.com/d/1-acaJy0AFFRSvfVTzSRRqQedm4QtyoOV',
+        'https://lh3.googleusercontent.com/d/17rQG63P3vZEe1BXy1bQuenDlZTBtHLSK',
+        'https://lh3.googleusercontent.com/d/1bA4w8vDEbpaYQVrMd1EfMyaAdssS5hYs',
+        'https://lh3.googleusercontent.com/d/1f6j0GWMOWCLgD-XVfXR22W2_Z0AjXJVH',
+        'https://lh3.googleusercontent.com/d/1T0zjyWGI7wd9ixMr6BP8EepYot3pVJ7S'
+      ]
     },
     { 
       title: 'Vocational Support', 
