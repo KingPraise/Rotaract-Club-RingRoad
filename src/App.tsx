@@ -498,7 +498,7 @@ const About = () => {
                   referrerPolicy="no-referrer"
                 />
                 <div className="h-10 w-px bg-gray-200"></div>
-                <div className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] leading-tight">
+                <div className="text-[11px] font-bold text-brand-muted uppercase tracking-[0.2em] leading-tight">
                   Official Sponsor of <br /> Rotaract Club of Ibadan Ring Road
                 </div>
               </div>
@@ -548,7 +548,7 @@ const Board = () => {
       role: 'Immediate Past President & Project Director', 
       isLead: false, 
       bio: 'Transitioning leader, tech professional at Red Cloud Technology, and dedicated commercial vegetable farmer.',
-      image: 'https://lh3.googleusercontent.com/d/1BOmp9Z_m8hXU6R9bKP4oZiiSgAQBY-K0'
+      image: 'https://lh3.googleusercontent.com/d/1DbiwRkwEQliLC7nc6IsJ4BoN58WJtZ5b'
     },
     { 
       name: 'Rtr. Akinsoroju Tunmininu', 
@@ -1176,7 +1176,7 @@ const Footer = () => {
               <span className="w-8 h-px bg-gray-200 hidden md:block"></span>
               Service Above Self
             </p>
-            <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.4em] flex items-center justify-center md:justify-start gap-2 mt-4">
+            <p className="text-[10px] font-black text-black uppercase tracking-[0.4em] flex items-center justify-center md:justify-start gap-2 mt-4">
               <MapPin size={10} className="text-rotaract-gold" />
               Panthers Hub, Familusi Avenue, Iyaganku, Ibadan.
             </p>
@@ -1198,7 +1198,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:row justify-between items-center gap-6 text-[10px] text-gray-300 font-bold uppercase tracking-[0.2em] border-t border-gray-50 pt-12">
+        <div className="flex flex-col md:row justify-between items-center gap-6 text-[10px] text-black font-bold uppercase tracking-[0.2em] border-t border-gray-50 pt-12">
           <div>© 2026 Rotaract Club Of Ibadan Ring Road. District 9126</div>
           <div className="flex items-center gap-2 text-rotary-blue">
             <span className="w-1.5 h-1.5 bg-rotaract-gold rounded-full shadow-[0_0_8px_#F7A81B]"></span>
