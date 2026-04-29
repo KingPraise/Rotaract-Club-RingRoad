@@ -248,7 +248,7 @@ const Hero = () => {
           className="max-w-md"
         >
           <span className="inline-block bg-rotaract-gold text-rotary-blue text-[10px] font-bold tracking-widest px-3 py-1 rounded mb-6 uppercase">
-            Service Above Self · Ibadan, Nigeria
+            Service Above Self
           </span>
           <h1 className="text-5xl md:text-6xl font-extrabold leading-[1.1] mb-6 tracking-tight text-white italic">
             Young Leaders. <br/>Real Service. <br/>Lasting Impact.
@@ -582,7 +582,7 @@ const Board = () => {
       name: 'Rtr. Justinah Olawuyi', 
       role: 'Club Welfare Officer', 
       isLead: false, 
-      bio: 'Final-year student dedicated to the holistic well-being and social support of all club members.',
+      bio: 'Event planner dedicated to the holistic well-being and social support of all club members.',
       image: 'https://lh3.googleusercontent.com/d/12M1PmqcMGEtvlwNdXYyXBiCUmlCQPUdN'
     },
     { 
@@ -1082,7 +1082,7 @@ const Events = () => {
     { 
       month: 'MAY', 
       day: '24', 
-      title: 'Joint District Fellowship', 
+      title: 'Joint Fellowship with Selected Rotary Clubs', 
       lead: 'Rtr. Risqat',
       time: '6:30 PM - 9:00 PM',
       location: 'Premier Hotel, Ibadan',
