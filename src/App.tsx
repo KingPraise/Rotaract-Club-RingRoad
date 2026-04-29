@@ -544,22 +544,22 @@ const Board = () => {
       image: 'https://lh3.googleusercontent.com/d/1bNFqh6QwRGF8fP7quxX-j11FglcuapJw'
     },
     { 
-      name: 'Rtr. Adejemo Risqat', 
-      role: 'Immediate Past President & Project Director', 
+      name: 'Rtr. Adejumo Risqat', 
+      role: 'Project Director & Club Trainer', 
       isLead: false, 
       bio: 'Transitioning leader, tech professional at Red Cloud Technology, and dedicated commercial vegetable farmer.',
       image: 'https://lh3.googleusercontent.com/d/1DbiwRkwEQliLC7nc6IsJ4BoN58WJtZ5b'
     },
     { 
-      name: 'Rtr. Akinsoroju Tunmininu', 
+      name: 'Rtr. Tunmininu Tilewa Akinsuroju', 
       role: 'Treasurer', 
       isLead: false, 
       bio: 'Professional Medical Laboratory Scientist ensuring the club\'s financial integrity and transparent reporting.',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Tunmininu&backgroundColor=d1d4f9'
+      image: 'https://lh3.googleusercontent.com/d/1A5vVn0UoRR4-c9M8S0DSBx2vsar1qPcV'
     },
     { 
-      name: 'Rtr. Oluwatofunmi Tejumola', 
-      role: 'Club Trainer', 
+      name: 'Rtr. Tejumola Tofunmi', 
+      role: 'Membership Director', 
       isLead: false, 
       bio: 'Professional graphics designer and branding expert dedicated to membership development and training.',
       image: 'https://lh3.googleusercontent.com/d/14Hj_7paRO9z7xisi_sRWeoqTH21bt0cl'
@@ -572,11 +572,11 @@ const Board = () => {
       image: 'https://lh3.googleusercontent.com/d/1Q-mk0TbqCaJX0t0V_6rAA8XDVMg3fS6x'
     },
     { 
-      name: 'Rtr. Pelayanju Omotayo', 
+      name: 'Rtr. Peleyanju Omotayo', 
       role: 'Public Media Officer', 
       isLead: false, 
       bio: 'Cybersecurity and Penetration Hacking specialist focusing on our digital outreach and platform security.',
-      image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Omotayo&backgroundColor=c0aede'
+      image: 'https://lh3.googleusercontent.com/d/1M4yQ3oJ5Mhlbq7JBfvWMOMutiL9qhPd9'
     },
     { 
       name: 'Rtr. Justinah Olawuyi', 
@@ -586,11 +586,18 @@ const Board = () => {
       image: 'https://lh3.googleusercontent.com/d/12M1PmqcMGEtvlwNdXYyXBiCUmlCQPUdN'
     },
     { 
-      name: 'Rtr. Oluwatoke Anita', 
-      role: 'Club Admin', 
+      name: 'Rtr. Odufuwa Omotoke Anita', 
+      role: 'Club Admin & SAA', 
       isLead: false, 
       bio: 'Student entrepreneur and perfume specialist managing our administrative core and member coordination.',
       image: 'https://lh3.googleusercontent.com/d/1pJJjNLmXWtcN00M9KVZWSpoUM1fb1VSz'
+    },
+    { 
+      name: 'Rtr. Alayande Damilola', 
+      role: 'International Service Director', 
+      isLead: false, 
+      bio: 'A graphics designer, Business man and a film maker. I’m passionate about humanitarian Service.',
+      image: 'https://lh3.googleusercontent.com/d/1vMg6TVs3TGzTLmOdl_chjwlykbE92DkH'
     },
   ];
 
