@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helpers
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    // Newsletter Subscribers
+    match /newsletter_subscribers/{subscriberId} {
+      function isValidNewsletterSubscriber(data) {
+        return data.keys().hasAll(['email', 'subscribedAt']) 
+          && data.keys().size() == 2
+          && data.email is string 
+          && data.email.size() <= 256
+          && data.subscribedAt == request.time;
+      }
+
+      // Anyone can subscribe (add to the list)
+      allow create: if isValidNewsletterSubscriber(incoming());
+      
+      // Only authenticated admins (if we had them) or system should read, 
+      // for this app we'll keep it simple but secure.
+      allow read: if false; // Deny direct read from client for privacy
+    }
+  }
+}

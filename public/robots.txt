@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://racibadanringroad.org/sitemap.xml

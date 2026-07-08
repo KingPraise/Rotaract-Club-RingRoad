@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-rotaract-cranberry: #D91E5C;
+  --color-rotaract-secondary: #2D3E50;
+  --color-brand-dark: #2D0A16;
+  --color-brand-muted: #6B4E59;
+  --color-brand-bg: #FFF5F8;
+  
+  /* Dark Mode Variants */
+  --color-dark-bg: #0F172A;
+  --color-dark-surface: #1E293B;
+  --color-dark-border: #334155;
+  --color-dark-text-primary: #F8FAFC;
+  --color-dark-text-secondary: #94A3B8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply transition-colors duration-300;
+  }
+
+  .dark body {
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-text-primary);
+  }
+}
+
+@layer utilities {
+  .hero-pattern {
+    background-image: radial-gradient(circle at 2px 2px, rgba(0, 0, 0, 0.05) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  .dark .hero-pattern {
+    background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  }
+  
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+  
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes snow {
+    0% { background-position: 0px 0px, 0px 0px, 0px 0px; }
+    100% { background-position: 400px 600px, -300px 500px, 200px 400px; }
+  }
+
+  .snow-bg {
+    background-image: 
+      /* Layer 1: Large close snowflakes */
+      radial-gradient(6px 6px at 50px 100px, rgba(255, 255, 255, 1), transparent),
+      radial-gradient(5px 5px at 200px 50px, rgba(255, 255, 255, 0.9), transparent),
+      radial-gradient(6px 6px at 350px 200px, rgba(255, 255, 255, 1), transparent),
+      radial-gradient(5px 5px at 150px 350px, rgba(255, 255, 255, 0.8), transparent),
+      radial-gradient(6px 6px at 500px 150px, rgba(255, 255, 255, 0.9), transparent),
+      radial-gradient(5px 5px at 450px 400px, rgba(255, 255, 255, 1), transparent),
+      /* Layer 2: Medium snowflakes */
+      radial-gradient(4px 4px at 100px 250px, rgba(255, 255, 255, 0.7), transparent),
+      radial-gradient(3px 3px at 300px 100px, rgba(255, 255, 255, 0.6), transparent),
+      radial-gradient(4px 4px at 400px 300px, rgba(255, 255, 255, 0.8), transparent),
+      radial-gradient(3px 3px at 50px 450px, rgba(255, 255, 255, 0.5), transparent),
+      radial-gradient(4px 4px at 250px 500px, rgba(255, 255, 255, 0.7), transparent),
+      radial-gradient(3px 3px at 550px 250px, rgba(255, 255, 255, 0.6), transparent),
+      /* Layer 3: Small distant snowflakes */
+      radial-gradient(2px 2px at 150px 150px, rgba(255, 255, 255, 0.4), transparent),
+      radial-gradient(2px 2px at 250px 250px, rgba(255, 255, 255, 0.3), transparent),
+      radial-gradient(2px 2px at 350px 50px, rgba(255, 255, 255, 0.5), transparent),
+      radial-gradient(2px 2px at 450px 250px, rgba(255, 255, 255, 0.4), transparent),
+      radial-gradient(2px 2px at 50px 350px, rgba(255, 255, 255, 0.3), transparent),
+      radial-gradient(2px 2px at 550px 550px, rgba(255, 255, 255, 0.5), transparent);
+    background-size: 600px 600px, 500px 500px, 400px 400px;
+    animation: snow 15s linear infinite;
+  }
+}
