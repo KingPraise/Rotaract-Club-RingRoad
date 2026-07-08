@@ -2108,13 +2108,17 @@ const Footer = ({ setView }: { setView: (v: 'home' | 'blog') => void }) => {
 const LoadingScreen = () => {
   return (
     <div className="fixed inset-0 bg-brand-bg dark:bg-dark-bg z-[100] flex flex-col items-center justify-center transition-colors duration-300">
-      <motion.img 
-        src="/logo.png" 
-        alt="Rotaract Logo"
-        className="w-48 md:w-56 h-auto mb-10 drop-shadow-2xl"
+      <motion.div 
         animate={{ y: [0, -25, 0] }}
         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-      />
+        className="mb-10 bg-white p-6 rounded-3xl shadow-2xl drop-shadow-xl"
+      >
+        <img 
+          src="/logo.png" 
+          alt="Rotaract Logo"
+          className="w-48 md:w-56 h-auto"
+        />
+      </motion.div>
       <div className="w-64 h-1.5 bg-rotaract-secondary/20 dark:bg-dark-border rounded-full overflow-hidden">
         <motion.div 
           className="h-full bg-rotaract-cranberry rounded-full"
