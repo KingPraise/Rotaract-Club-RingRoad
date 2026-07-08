@@ -1020,7 +1020,7 @@ const Board = () => {
       imagePos: 'object-[50%_15%]'
     },
     {
-      name: 'Rtr. Popoola Olamilekan',
+      name: 'Rtr. Popoola Olalekan Samuel',
       role: 'Project Director',
       isLead: false,
       bio: 'Project Manager and civic leader. Driving impact, creating change, and building a better tomorrow through community-centered service projects.',
@@ -2105,8 +2105,30 @@ const Footer = ({ setView }: { setView: (v: 'home' | 'blog') => void }) => {
     </footer>
   );
 };
+const LoadingScreen = () => {
+  return (
+    <div className="fixed inset-0 bg-brand-bg dark:bg-dark-bg z-[100] flex flex-col items-center justify-center transition-colors duration-300">
+      <motion.img 
+        src="/logo.png" 
+        alt="Rotaract Logo"
+        className="w-48 md:w-56 h-auto mb-10 drop-shadow-2xl"
+        animate={{ y: [0, -25, 0] }}
+        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <div className="w-64 h-1.5 bg-rotaract-secondary/20 dark:bg-dark-border rounded-full overflow-hidden">
+        <motion.div 
+          className="h-full bg-rotaract-cranberry rounded-full"
+          initial={{ width: "0%" }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 3, ease: "easeInOut" }}
+        />
+      </div>
+    </div>
+  );
+};
 
 export default function App() {
+  const [loading, setLoading] = useState(true);
   const [view, setView] = useState<'home' | 'blog'>('home');
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -2115,6 +2137,13 @@ export default function App() {
     }
     return false;
   });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     if (darkMode) {
@@ -2136,6 +2165,10 @@ export default function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [view]);
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <div className="font-sans text-brand-dark dark:text-dark-text-primary bg-white dark:bg-dark-bg subpixel-antialiased transition-colors duration-300">
