@@ -53,7 +53,7 @@ import GalleryImage7 from './assets/images/regenerated_image_1779308152663.jpg';
 
 import AlamuImage from './assets/images/alamu-headshot.jpeg';
 import FaithImage from './assets/images/faith-headshot.jpeg';
-import JumaiImage from './assets/images/jumai.jpg';
+import JumaiImage from './assets/images/jumai-headshot.jpeg';
 import PresidentUnveilingImage from './assets/images/president_unveiling.jpg';
 import HandoverImage from './assets/images/handover.jpeg';
 
@@ -442,7 +442,7 @@ const Navbar = ({ setView, currentView, darkMode, setDarkMode }: {
               <img 
                 src="/logo.png" 
                 alt="Rotaract Club Of Ibadan Ring Road" 
-                className="w-[190px] h-[100px] object-contain relative z-10 transition-all duration-500 group-hover:scale-110"
+                className="w-[190px] h-[100px] object-contain relative z-10 transition-all duration-500 scale-[1.25] md:scale-[1.35] origin-left group-hover:scale-[1.35] md:group-hover:scale-[1.45]"
                 referrerPolicy="no-referrer"
               />
             </div>
